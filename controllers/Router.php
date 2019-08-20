@@ -1,10 +1,17 @@
 <?php
+require_once('views/View.php');
+
+//creation de la class Router
+
 class Router
 {
+  //Instance
 private $_ctrl;
 private $_view;
+//function routeReq() qui permet d'autoloader les classes et de gerer l'url.
 public function routeReq(){
     try {
+
         spl_autoload_register(function($class){
           require_once('models/'.$class.'.php');
         });
@@ -19,7 +26,7 @@ public function routeReq(){
             require_once($controllerFile);
             $this->_ctrl = new $controllerClass($url);
           }else {
-            echo '<h1>Page Introuvable</h1>';
+            throw new Exception('Page introuvable');
           }
         }else {
           require_once('controllers/ControllerAccueil.php');
@@ -27,7 +34,8 @@ public function routeReq(){
         }
     } catch (Exception $e) {
         $errorMsg = $e->getMessage();
-        require_once('views/viewError.php');
+        $this->_view = new View('Error');
+        $this->_view->generate(array('errorMsg' => $errorMsg));
         }
     }
 }
