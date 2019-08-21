@@ -14,7 +14,7 @@ class ControllerAccueil{
     else
     $this->posts();
   }
-  //Function  articles qui permet de recuperer les articles generate un tableaux avec toutes les données
+  //Function  posts qui permet de recuperer les articles generate un tableaux avec toutes les données
   private function posts(){
     $this->_postManager = new PostManager;
     $posts = $this->_postManager->getPosts();
