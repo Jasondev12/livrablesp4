@@ -1,7 +1,7 @@
 <?php $this->_t = 'Mon blog';
-foreach($articles as $article): ?>
-<h2><?= $article->title() ?></h2>
-<time><?= $article->date() ?></time>
+foreach($posts as $post): ?>
+<h2><?= $post->title() ?></h2>
+<time><?= $post->date() ?></time>
 
 
  <?php endforeach; ?>

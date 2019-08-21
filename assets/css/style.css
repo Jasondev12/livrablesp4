@@ -1,0 +1,77 @@
+   a.brand-logo {
+       font-family: 'Great Vibes', cursive;
+       text-shadow: 1px 1px 2px #28a745;
+   }
+
+   button#button_login {
+       display: block !important;
+       margin: auto !important;
+   }
+
+
+   body {
+       display: flex;
+       min-height: 100vh;
+       flex-direction: column;
+   }
+
+   main {
+       flex: 1 0 auto;
+   }
+
+   #row-home {
+       height: 73vh;
+   }
+
+   .page-footer {
+       background-color: #263238;
+       padding-bottom: 20px;
+   }
+
+   #text-footer {
+       text-align: center;
+   }
+
+   h1,
+   h2 {
+       font-family: 'Amatic SC', cursive;
+       font-size: 5em;
+       margin: 1rem 0 1rem 0;
+   }
+
+   h4,
+   h5,
+   h6,
+   .card-title.grey-text.text-darken-4,
+   .card-title {
+       text-decoration: underline;
+   }
+
+   hr {
+       display: none;
+   }
+
+   #imgrounded {
+       margin-top: 20px;
+       max-width: 55%;
+       max-height: 45%;
+       border-radius: 50%;
+   }
+
+   .biocontent {
+       text-align: center;
+   }
+
+   div.col {
+       margin-bottom: 20px;
+   }
+
+
+
+   /* MEDIA QUERIES */
+
+   @media (max-width: 380px) {
+
+       a.brand-logo {
+           font-size: x-large;
+       }
