@@ -1,11 +1,11 @@
 <?php
-require('template.php');
-require('topbar.php');
+require('models/include/meta.php');
+require('models/include/topbar.php');
 ?>
 
 
 <div class="container">
-<h2>Blog</h2>
+<h1>Blog</h1>
 
 
 
@@ -23,7 +23,7 @@ while($post = $posts->fetch()){
             <div class="col s12 m6 l4">
                 <img src="../assets/img/posts/<?= $post['image'] ?>" class="materialboxed responsive-img" alt="<?= $post['title']?>">
                 <br/><br/>
-                <a class="btn light-blue waves-effect wave-light" href="index.php?page=post&id=<?= $post['id']?>">Lire l'article complet</a>
+                <a class="btn light-blue waves-effect wave-light" href="index.php?action=post&id=<?= $post['id']?>">Lire l'article complet</a>
             </div>
         </div>
     </div>
@@ -33,5 +33,5 @@ while($post = $posts->fetch()){
 ?>
 </div>
 <?php
-require('footer.php');
+require('models/include/footer.php');
 ?>

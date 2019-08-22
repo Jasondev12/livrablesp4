@@ -1,12 +1,12 @@
 <?php
 
-require('model.php');
+require('models/model.php');
 
 function listPosts()
 {
     $posts = getPosts();
 
-    require('listPostsView.php');
+    require('views/listPostsView.php');
 }
 
 function post()
@@ -14,13 +14,13 @@ function post()
     $post = getPost($_GET['id']);
     $comments = getComments($_GET['id']);
 
-    require('postView.php');
+    require('views/postView.php');
 }
 function blog(){
   $posts = getAllPosts();
 
-  require('listBlogView.php');
+  require('views/listBlogView.php');
 }
 function apropos(){
-  require('apropos.php');
+  require('views/apropos.php');
 }

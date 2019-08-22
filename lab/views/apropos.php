@@ -1,6 +1,6 @@
 <?php
-require('template.php');
-require('topbar.php');
+require('models/include/meta.php');
+require('models/include/topbar.php');
 ?>
 
 
@@ -36,5 +36,5 @@ require('topbar.php');
     <!-- /.container -->
 </body>
 <?php
-require('footer.php');
+require('models/include/footer.php');
 ?>

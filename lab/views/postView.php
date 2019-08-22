@@ -1,7 +1,7 @@
 
 
-<?php require('template.php'); ?>
-<?php require('topbar.php') ?>
+<?php require('models/include/meta.php'); ?>
+<?php require('models/include/topbar.php') ?>
         </div>
     <div class="parallax-container">
         <div class="parallax">
@@ -15,7 +15,6 @@
             <p><?= nl2br( $post['content']); ?></p>
             <h4>Commentaires:</h4>
             <?php
-
 
                   while($comment = $comments->fetch()){
                         ?>
@@ -52,7 +51,12 @@
                     </div>
                 </div>
             </form>
-
-
+            <div class="return">
+              <div class="returnpost">
+                  <a href="index.php?action=blog" class="btn-floating light-blue  pulse"><i class="material-icons">keyboard_return</i></a>
+              </div>
+                    <a href="index.php" class="btn-floating light-blue  pulse"><i class="material-icons">home</i></a>
             </div>
-<?php require('footer.php') ?>
+            </div>
+
+<?php require('models/include/footer.php') ?>

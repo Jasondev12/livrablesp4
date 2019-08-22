@@ -1,7 +1,7 @@
 <?php
-require_once('template.php');
+require_once('models/include/meta.php');
 
-require_once('topbar.php');
+require_once('models/include/topbar.php');
  ?>
 
 
@@ -47,4 +47,4 @@ while ($data = $posts->fetch())
 
 
 
-<?php require_once('footer.php'); ?>
+<?php require_once('models/include/footer.php'); ?>
