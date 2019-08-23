@@ -1,21 +1,8 @@
 <?php
-function getPosts()
+class ModelPost{
+public function getPost($postId)
 {
-    $db = dbConnect();
-    $req = $db->query("SELECT * FROM posts WHERE posted ='1' ORDER BY date ASC LIMIT 0, 2");
-
-    return $req;
-}
-function getAllPosts()
-{
-    $db = dbConnect();
-    $req = $db->query("SELECT * FROM posts WHERE posted ='1' ORDER BY date ASC");
-
-    return $req;
-}
-function getPost($postId)
-{
-    $db = dbConnect();
+    $db = $this->dbConnect();
     $req = $db->prepare('SELECT * FROM posts WHERE id = ?');
     $req->execute(array($postId));
     $post = $req->fetch();
@@ -23,16 +10,15 @@ function getPost($postId)
     return $post;
 }
 
-function getComments($postId)
+public function getComments($postId)
 {
-    $db = dbConnect();
+    $db = $this->dbConnect();
     $comments = $db->prepare('SELECT * FROM comments WHERE post_id = ? ORDER BY date DESC');
     $comments->execute(array($postId));
 
     return $comments;
 }
-
-function dbConnect()
+public function dbConnect()
 {
     try
     {
@@ -44,3 +30,5 @@ function dbConnect()
         die('Erreur : '.$e->getMessage());
     }
 }
+}
+?>

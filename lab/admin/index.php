@@ -1,7 +1,10 @@
 <?php
 
 require('controllers/controller.php');
+session_start();
 
+
+if(isset($_SESSION['id'])){
 if (isset($_GET['action'])) {
     if ($_GET['action'] == 'signin') {
        signin();
@@ -10,7 +13,7 @@ if (isset($_GET['action'])) {
         addmdo();
     }elseif($_GET['action'] == 'lista'){
        lista_modif();
-    }elseif($_GET['action'] == 'addarticle'){
+    }elseif($_GET['action'] == 'addpost'){
         addarticle();
     }elseif($_GET['action'] == 'logout'){
         logout();
@@ -20,4 +23,7 @@ if (isset($_GET['action'])) {
 }
 else {
     dashboard();
+}
+}else{
+   signin();
 }

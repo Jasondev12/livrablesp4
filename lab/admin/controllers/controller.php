@@ -18,6 +18,7 @@ function addmdo(){
 }
 function lista_modif(){
     require('models/model.list.php');
+    
     require('views/viewList.php');
 }
 function addarticle(){
@@ -32,3 +33,4 @@ function signin(){
     require('models/model.signin.php');
     require('views/viewLogin.php');
 }
+

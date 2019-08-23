@@ -1,9 +1,8 @@
 <?php
-
 require('../admin/models/include/meta.php');
 require('../admin/models/include/topbar.php');
 ?>
-
+<div class='container'>
 
 <h2>Tableau de bord</h2>
 <div class="row">
@@ -105,3 +104,4 @@ require('../admin/models/include/topbar.php');
     <pre>
 
 </pre>
+</div>
