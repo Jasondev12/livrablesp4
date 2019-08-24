@@ -1,8 +1,22 @@
 <?php
-
-
+function upost(){
+    require('models/model.post.php');
+    require('views/viewPost.php');    
+}
+function password(){
+    require('models/model.password.php');
+    require('views/viewPassword.php');    
+}
+function newmodo(){
+    require('models/model.newModo.php');
+    require('views/viewModo.php');  
+}
 function quit(){
     header('Location: ../index.php');
+}
+function delete(){
+    require('models/model.delete.php');
+    
 }
 function logout()
 {
@@ -18,7 +32,8 @@ function addmdo(){
 }
 function lista_modif(){
     require('models/model.list.php');
-    
+    $model = new ModelEPost();
+    $result = $model->get_post();
     require('views/viewList.php');
 }
 function addarticle(){

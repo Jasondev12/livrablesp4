@@ -21,7 +21,7 @@ while($post = $posts->fetch()){
                 <?= substr(nl2br($post['content']),0,1200) ?>...
             </div>
             <div class="col s12 m6 l4">
-                <img src="../assets/img/posts/<?= $post['image'] ?>" class="materialboxed responsive-img" alt="<?= $post['title']?>">
+                <img src="img/posts/0.jpg" class="materialboxed responsive-img" alt="<?= $post['title']?>">
                 <br/><br/>
                 <a class="btn light-blue waves-effect wave-light" href="index.php?action=post&id=<?= $post['id']?>">Lire l'article complet</a>
             </div>

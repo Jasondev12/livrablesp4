@@ -8,24 +8,27 @@ require('../admin/models/include/topbar.php');
 
 <?php
 
-foreach($result as $post){
+while($post = $result->fetch()){
     ?>
     <div class="row">
         <div class="col s12">
-            <h4><?= $post->title ?><?php echo ($post->posted == "0") ? "<i class='material-icons'>lock</i>" : "" ?></h4>
+            <h4><?= $post['title'] ?><?php echo ($post['posted'] == "0") ? "<i class='material-icons'>lock</i>" : "" ?></h4>
 
             <div class="row">
                 <div class="col s12 m6 l8">
-                    <?= substr(nl2br($post->content),0,1200) ?>...
+                    <?= substr(nl2br($post['content']),0,1200) ?>...
                 </div>
                 <div class="col s12 m6 l4">
-                    <img src="../img/posts/<?= $post->image ?>" class="materialboxed responsive-img" alt="<?= $post->title ?>"/>
+                    <img src="../img/posts/<?= $post['image'] ?>" class="materialboxed responsive-img" alt="<?= $post['title'] ?>"/>
                     <br/><br/>
-                    <a class="btn light-blue waves-effect waves-light" href="index.php?page=post&id=<?= $post->id ?>">Lire l'article complet</a>
+                    <a class="btn light-blue waves-effect waves-light" href="index.php?action=upost&id=<?= $post['id'] ?>">Modifier</a>
+                    <a class="btn light-red " href="index?action=delete&del_post=<?= $post['id'] ?>">Supprimer</a>
                 </div>
             </div>
         </div>
     </div>
-</div>
+
     <?php
 }
+?>
+</div>

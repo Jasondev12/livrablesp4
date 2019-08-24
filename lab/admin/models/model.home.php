@@ -18,22 +18,16 @@ function get_comments(){
     $db = new PDO('mysql:host=localhost;dbname=blogp4;charset=utf8', 'root', '');
 
     $req = $db->query("
-        SELECT  comments.id,
-                comments.name,
-                comments.email,
-                comments.date,
-                comments.post_id,
-                comments.comment,
-                posts.title
+        SELECT  *
         FROM comments
         JOIN posts
-        ON comments.post_id = posts.id
-        WHERE comments.seen = '0'
-        ORDER BY comments.date ASC
+        ON id_post = posts.id
+        WHERE seen = '0'
+        ORDER BY date ASC
     ");
 
     $results = [];
-    while($rows = $req->fetchObject()){
+    while($rows = $req->fetch()){
         $results[] = $rows;
     }
     return $results;

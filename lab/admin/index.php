@@ -19,11 +19,24 @@ if (isset($_GET['action'])) {
         logout();
     }elseif($_GET['action'] == 'quit'){
         quit();
-}
+    }elseif($_GET['action'] == 'upost'){
+    upost();
+    }elseif($_GET['action']== 'delete'){
+        delete();
+    }
+   
 }
 else {
     dashboard();
 }
 }else{
-   signin();
+    if(isset($_GET['action'])){
+    if($_GET['action'] == 'newmodo'){
+        newmodo();
+    }elseif($_GET['action'] == 'password'){
+        password();
+    }
+}else{
+    signin();
+}
 }

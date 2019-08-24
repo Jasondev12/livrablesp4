@@ -1,33 +1,36 @@
 <?php
+
 require('../admin/models/include/meta.php');
 require('../admin/models/include/topbar.php');
+
+
+
 ?>
+
 <div class='container'>
 <div class="row">
     <div class="col l4 m6 s12 offset-l4 offset-m3">
         <div class="card-panel">
             <div class="row">
                 <div class="col s6 offset-s3">
-                    <img src="../../assets/img/admin.png" alt="Administrateur" width="100%" />
+                    <img src="..:/assets/img/modo.png" alt="image modérateur" width="100%">
                 </div>
             </div>
-
-            <h4 class="center-align">Se connecter</h4>
-
+            <h4 class="center-align">Choisir un mot de passe</h4>
             <?php
                 if(isset($_POST['submit'])){
-                    $email = htmlspecialchars(trim($_POST['email']));
                     $password = htmlspecialchars(trim($_POST['password']));
+                    $password_again = htmlspecialchars(trim($_POST['password_again']));
 
                     $errors = [];
 
-                    if(empty($email) || empty($password)){
-                        $errors['empty'] = "Tous les champs n'ont pas été remplis!";
-                    }else if(is_admin($email,$password) == 0){
-                        $errors['exist']  = "Cet administrateur n'existe pas";
+                    if(empty($password) || empty($password_again)){
+                        $errors['empty'] = "Tous les champs n'ont pas été remplis";
                     }
-
-                    if(!empty($errors)){
+                    if($password != $password_again){
+                        $errors['different'] = "Les mots de passe sont différents";
+                    }
+                if(!empty($errors)){
                         ?>
             <div class="card red">
                 <div class="card-content white-text">
@@ -40,31 +43,32 @@ require('../admin/models/include/topbar.php');
             </div>
             <?php
                     }else{
-                        $_SESSION['admin'] = $email;
+                        update_password($password);
                         header("Location:index.php?page=dashboard");
                     }
                 }
-            ?>
 
+
+
+            ?>
             <form method="post">
                 <div class="row">
                     <div class="input-field col s12">
-                        <input type="email" id="email" name="email" />
-                        <label for="email">Adresse email</label>
-                    </div>
-                    <div class="input-field col s12">
                         <input type="password" id="password" name="password" />
-                        <label for="password">Mot de passe</label>
+                        <label for="password"></label>
+                        <div class="input-field col s12">
+                            <input type="password" name="password_again" id="password_again" />
+                            <label for="password_again">Répéter le mot de passe</label>
+                        </div>
                     </div>
+                    <center>
+                        <button type="submit" name="submit" class="btn light-blue waves-effect waves-light">
+                            <i class="material-icons left">perm_identity</i>
+                            Se connecter
+                        </button>
+                    </center>
+
                 </div>
-                <center>
-                    <button type="submit" name="submit" class="waves-effect waves-light btn light-blue">
-                        <i class="material-icons left">perm_identity</i>
-                        Se connecter
-                    </button>
-                    <br/><br/>
-                    <a href="index?action=newmodo">Nouveau modérateur</a>
-                </center>
             </form>
         </div>
     </div>

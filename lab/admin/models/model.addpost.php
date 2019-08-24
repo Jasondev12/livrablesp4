@@ -21,9 +21,9 @@ function post($title,$content,$posted){
 
 }
 
-function post_img($tmp_name, $extension){
+function post_img($tmp_name, $extension, $id){
     $db = new PDO('mysql:host=localhost;dbname=blogp4;charset=utf8', 'root', '');  
-    $id = $db->lastInsertId();
+    
     $i = [
         'id'    =>  $id,
         'image' =>  $id.$extension      //$id = 25 , $extension = .jpg      $id.$extension = "25".".jpg" = 25.jpg
@@ -33,5 +33,5 @@ function post_img($tmp_name, $extension){
     $req = $db->prepare($sql);
     $req->execute($i);
     move_uploaded_file($tmp_name,"../img/posts/".$id.$extension);
-    header("Location:index.php?page=post&id=".$id);
+    header("Location:../index.php?action=post&id=".$id);
 }

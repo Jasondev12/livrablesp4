@@ -1,7 +1,7 @@
 <nav class="blue-grey darken-4">
     <div class="container">
         <div class="nav-wrapper">
-            <a href="index.php?action=dashboard" class="brand-logo">Administration</a>
+            <a href="index" class="brand-logo">Administration</a>
 
 
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -23,7 +23,7 @@
             </ul>
 
             <ul class="sidenav" id="mobile-demo">
-                <li class=""><a href="index.php?action=dashboard">Tableau de bord</a></li>
+                <li class=""><a href="index">Tableau de bord</a></li>
                 <?php
                 
                 ?>
