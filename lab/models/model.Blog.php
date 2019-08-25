@@ -12,13 +12,14 @@ public function dbConnect()
 {
     try
     {
-        $db = new PDO('mysql:host=localhost;dbname=blogp4;charset=utf8', 'root', '');
+        require('models/include/connect.php');
         return $db;
     }
     catch(Exception $e)
     {
         die('Erreur : '.$e->getMessage());
     }
+
 }
 }
 ?>

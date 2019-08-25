@@ -2,8 +2,7 @@
 
 function get_post(){
 
-    $db = new PDO('mysql:host=localhost;dbname=blogp4;charset=utf8', 'root', '');
-    $req = $db->query ("
+   require('models/include/connect.php');    $req = $db->query ("
     SELECT  posts.id,
             posts.title,
             posts.image,
@@ -24,8 +23,7 @@ function get_post(){
 function edit($title,$content,$posted,$id){
 
     
-    $db = new PDO('mysql:host=localhost;dbname=blogp4;charset=utf8', 'root', '');
-    $e = [
+   require('models/include/connect.php');    $e = [
         'title'     => $title,
         'content'   => $content,
         'posted'    => $posted,

@@ -43,9 +43,9 @@ require('../admin/models/include/topbar.php');
 </div>
 <?php
         }else{
-            post($title,$content,$posted);
+            $post = $model->post($title,$content,$posted);
             if(!empty($_FILES['image']['name'])){
-                post_img($_FILES['image']['tmp_name'], $extension);
+                $model->post_img($_FILES['image']['tmp_name'], $extension, $post['id']);
             }else{
                 $id = $db->lastInsertId();
                 header("Location:index.php?page=post&id=".$id);

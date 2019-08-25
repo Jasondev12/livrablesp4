@@ -9,7 +9,19 @@ public function getPost($postId)
 
     return $post;
 }
+function comment($name, $email,$comment){
+    $db = $this->dbConnect();  
+    $c = array(
+        'name'       => $name,
+        'email'      => $email,
+        'comment'    => $comment,
+        'post_id'    =>$_GET["id"]
+    );
 
+    $sql = "INSERT INTO comments(name,email,comment,post_id,date) VALUES(:name, :email, :comment, :post_id, NOW())";
+    $req = $db->prepare($sql);
+    $req->execute($c);
+}
 public function getComments($postId)
 {
     $db = $this->dbConnect();
@@ -22,13 +34,14 @@ public function dbConnect()
 {
     try
     {
-        $db = new PDO('mysql:host=localhost;dbname=blogp4;charset=utf8', 'root', '');
+        require('models/include/connect.php');
         return $db;
     }
     catch(Exception $e)
     {
         die('Erreur : '.$e->getMessage());
     }
+
 }
 }
 ?>

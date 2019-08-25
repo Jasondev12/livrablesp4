@@ -28,6 +28,46 @@
 
             <h4>Commenter:</h4>
 
+            <?php
+                if(isset($_POST['submit'])){
+                    $name = htmlspecialchars(trim($_POST['name']));
+                    $email = htmlspecialchars(trim($_POST['email']));
+                    $comment = htmlspecialchars(trim($_POST['comment']));
+                    $errors = [];
+
+                    if(empty($name) || empty($email) || empty($comment)){
+                        $errors['empty'] = "Tous les champs n'ont pas été remplis";
+                    }else{
+                        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                            $errors['email'] = "L'adresse email n'est pas valide";
+                        }
+                    }
+
+
+                    if(!empty($errors)){
+                        ?>
+                            <div class="card red">
+                                <div class="card-content white-text">
+                                    <?php
+                                        foreach($errors as $error){
+                                            echo $error."<br/>";
+                                        }
+                                    ?>
+                                </div>
+                            </div>
+                        <?php
+                    }else{
+                        $model->comment($name,$email,$comment);
+                        ?>
+                            <script>
+                                window.location.replace("index.php?action=post&id=<?= $_GET['id'] ?>");
+                            </script>
+                        <?php
+                    }
+
+                }
+
+            ?>
 
             <form method="post">
                 <div class="row">

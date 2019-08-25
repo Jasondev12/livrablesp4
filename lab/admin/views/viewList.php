@@ -22,7 +22,7 @@ while($post = $result->fetch()){
                     <img src="../img/posts/<?= $post['image'] ?>" class="materialboxed responsive-img" alt="<?= $post['title'] ?>"/>
                     <br/><br/>
                     <a class="btn light-blue waves-effect waves-light" href="index.php?action=upost&id=<?= $post['id'] ?>">Modifier</a>
-                    <a class="btn light-red " href="index?action=delete&del_post=<?= $post['id'] ?>">Supprimer</a>
+                    <a class="btn light-red " href="index?action=options&del_post=<?= $post['id'] ?>">Supprimer</a>
                 </div>
             </div>
         </div>

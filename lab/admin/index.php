@@ -21,10 +21,10 @@ if (isset($_GET['action'])) {
         quit();
     }elseif($_GET['action'] == 'upost'){
     upost();
-    }elseif($_GET['action']== 'delete'){
-        delete();
+  }elseif($_GET['action']== 'options'){
+        options();
     }
-   
+
 }
 else {
     dashboard();

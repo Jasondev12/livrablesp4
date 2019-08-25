@@ -1,29 +1,29 @@
 <?php
 function upost(){
     require('models/model.post.php');
-    require('views/viewPost.php');    
+    require('views/viewPost.php');
 }
 function password(){
     require('models/model.password.php');
-    require('views/viewPassword.php');    
+    require('views/viewPassword.php');
 }
 function newmodo(){
     require('models/model.newModo.php');
-    require('views/viewModo.php');  
+    require('views/viewModo.php');
 }
 function quit(){
     header('Location: ../index.php');
 }
-function delete(){
-    require('models/model.delete.php');
-    
+function options(){
+    require('models/model.options.php');
+
 }
 function logout()
 {
 
     session_start();
     session_destroy();
-    
+
     header('Location: ../index.php');
 }
 function addmdo(){
@@ -38,6 +38,8 @@ function lista_modif(){
 }
 function addarticle(){
     require('models/model.addpost.php');
+    $model = new ModelAPost();
+    
     require('views/viewAddArticle.php');
 }
 function dashboard(){
@@ -48,4 +50,3 @@ function signin(){
     require('models/model.signin.php');
     require('views/viewLogin.php');
 }
-

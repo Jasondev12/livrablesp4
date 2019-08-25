@@ -1,7 +1,7 @@
 <?php
 
 function email_taken($email){
-    $db = new PDO('mysql:host=localhost;dbname=blogp4;charset=utf8', 'root', '');  
+    require('models/include/connect.php');
     $e = ['email'   =>  $email];
     $sql = "SELECT * FROM admins WHERE email = :email";
     $req = $db->prepare($sql);
@@ -17,7 +17,7 @@ function token($length){
 }
 
 function add_modo($name,$email,$role,$token){
-    $db = new PDO('mysql:host=localhost;dbname=blogp4;charset=utf8', 'root', '');  
+    require('models/include/connect.php');
 
     $m= [
         'name'      =>  $name,
@@ -55,7 +55,7 @@ function add_modo($name,$email,$role,$token){
 }
 
 function get_modos(){
-    $db = new PDO('mysql:host=localhost;dbname=blogp4;charset=utf8', 'root', '');  
+    require('models/include/connect.php');
     $req = $db->query("
         SELECT * FROM admins
     ");
