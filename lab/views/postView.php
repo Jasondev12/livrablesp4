@@ -5,7 +5,7 @@
         </div>
     <div class="parallax-container">
         <div class="parallax">
-            <img src="../assets/img/posts/<?= $post['image'] ?>" alt="<?= $post['title'] ?>"/>
+            <img src="img/posts/<?= $post['image'] ?>" alt="<?= $post['title'] ?>"/>
         </div>
     </div>
         <div class="container">
