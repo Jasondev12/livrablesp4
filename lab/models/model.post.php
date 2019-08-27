@@ -1,14 +1,16 @@
 <?php
+
 class ModelPost{
-public function getPost($postId)
+   
+    public function getPost($postId)
 {
     $db = $this->dbConnect();
     $req = $db->prepare('SELECT * FROM posts WHERE id = ?');
     $req->execute(array($postId));
     $post = $req->fetch();
-
     return $post;
 }
+    
 function comment($name, $email,$comment){
     $db = $this->dbConnect();  
     $c = array(
@@ -22,14 +24,15 @@ function comment($name, $email,$comment){
     $req = $db->prepare($sql);
     $req->execute($c);
 }
+    
 public function getComments($postId)
 {
     $db = $this->dbConnect();
     $comments = $db->prepare('SELECT * FROM comments WHERE post_id = ? ORDER BY date DESC');
     $comments->execute(array($postId));
-
     return $comments;
 }
+    
 public function dbConnect()
 {
     try
@@ -41,7 +44,7 @@ public function dbConnect()
     {
         die('Erreur : '.$e->getMessage());
     }
+}
+    }
 
-}
-}
 ?>

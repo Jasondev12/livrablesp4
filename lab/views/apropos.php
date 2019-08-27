@@ -2,9 +2,8 @@
 require('models/include/meta.php');
 require('models/include/topbar.php');
 ?>
-
-
 <title>Menu - Blog</title>
+
 <body>
     <!-- Page content -->
     <main>
@@ -24,7 +23,6 @@ require('models/include/topbar.php');
                     </div>
                 </div>
             </div>
-
             <div class="returnindex">
                 <div class="col">
                     <a href="index.php" class="btn-floating light-blue  pulse"><i class="material-icons">home</i></a>

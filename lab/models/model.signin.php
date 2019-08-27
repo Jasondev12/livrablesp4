@@ -2,7 +2,7 @@
 
  function is_admin($email,$password)
 {
-    $db = new PDO('mysql:host=localhost;dbname=blogp4;charset=utf8', 'root', '');  
+    require('models/include/connectd.php');  
     
     $a = [
         'email'     =>  $email,
@@ -15,10 +15,7 @@
     if($exist == 1){
         $user_info = $req->fetch();
         $_SESSION['id'] = $user_info['id'];
-        $_SESSION['admin'] = $user_info['name'];
+        $_SESSION['admin'] = $user_info['email'];
     }
-    
 }
-
-
 ?>

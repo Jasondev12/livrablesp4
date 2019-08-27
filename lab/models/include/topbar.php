@@ -5,16 +5,16 @@
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="index">ACCUEIL</a></li>
-                <li><a href="index?action=blog">BLOG</a></li>
-                <li><a href="index?action=apropos">A PROPOS</a></li>
-                <li><a href="admin/index?">ADMINISTRATION</a></li>
+                <li><a href="index?client=blog">BLOG</a></li>
+                <li><a href="index?client=apropos">A PROPOS</a></li>
+                <li><a href="index?admin=dashboard">ADMINISTRATION</a></li>
             </ul>
         </div>
         <ul class="sidenav" id="mobile-demo">
             <li><a href="index">Accueil</a></li>
-            <li><a href="index?action=blog">Blog</a></li>
-            <li><a href="index?action=apropos">A propos</a></li>
-            <li><a href="admin/index?">Dashboard</a></li>
+            <li><a href="index?client=blog">Blog</a></li>
+            <li><a href="index?client=apropos">A propos</a></li>
+            <li><a href="index?admin=dashboard">Dashboard</a></li>
         </ul>
     </div>
 </nav>

@@ -1,2 +1,0 @@
-switch case router
-1 controllers  et 1 controllersadmin

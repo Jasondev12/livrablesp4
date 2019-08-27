@@ -1,37 +1,25 @@
 <?php
-
-require('../admin/models/include/meta.php');
-require('../admin/models/include/topbar.php');
-
-
+require('models/include/metad.php');
+require('models/include/topbard.php');
     $post = get_post();
-    if($post == false){
-        header("Location:index.php?page=error");
-    }
-
 ?>
 <div class='container'>
 </div>
-
 <div class="parallax-container">
     <div class="parallax">
-        <img src="../img/posts/<?= $post->image ?>" alt="<?= $post->title ?>" />
+        <img src="img/posts/<?= $post->image ?>" alt="<?= $post->title ?>" />
     </div>
 </div>
 <div class="container">
-
     <?php
-
         if(isset($_POST['submit'])){
             $title = htmlspecialchars(trim($_POST['title']));
             $content = htmlspecialchars(trim($_POST['content']));
             $posted = isset($_POST['public']) ? "1" : "0";
             $errors = [];
-
             if(empty($title) || empty($content)){
                 $errors['empty'] = "Veuillez remplir tous les champs";
             }
-
             if(!empty($errors)){
                 ?>
     <div class="card red">
@@ -49,17 +37,13 @@ require('../admin/models/include/topbar.php');
                 ?>
     <script>
         // redirection côté serveur
-        window.location.replace("index.php?page=post&id=<?= $_GET['id'] ?>");
+        window.location.replace("index.php?client=post&id=<?= $_GET['id'] ?>");
 
     </script>
     <?php
             }
         }
     ?>
-
-
-
-
     <form method="post">
         <div class="row">
             <div class="input-field col s12">
@@ -70,7 +54,6 @@ require('../admin/models/include/topbar.php');
                 <textarea id="content" name="content" class="materialize-textarea"><?= $post->content ?></textarea>
                 <label for="content">Contenu de l'article</label>
             </div>
-
             <div class="col s6">
                 <p>Public</p>
                 <div class="switch">
@@ -82,7 +65,6 @@ require('../admin/models/include/topbar.php');
                     </label>
                 </div>
             </div>
-
             <div class="col s6 right-align">
                 <br /><br />
                 <button type="submit" class="btn" name="submit">Modifier l'article</button>

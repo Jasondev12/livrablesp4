@@ -1,13 +1,12 @@
 <?php
-
+// MODELE DEFINIT LES FONCTIONS APPELES DANS NOS VIEWS
 function email_taken($email){
-    require('models/include/connect.php');
+    require('models/include/connectd.php');
     $e = ['email'   =>  $email];
     $sql = "SELECT * FROM admins WHERE email = :email";
     $req = $db->prepare($sql);
     $req->execute($e);
     $free = $req->rowCount($sql);
-
     return $free;
 }
 
@@ -17,7 +16,7 @@ function token($length){
 }
 
 function add_modo($name,$email,$role,$token){
-    require('models/include/connect.php');
+    require('models/include/connectd.php');
 
     $m= [
         'name'      =>  $name,
@@ -45,17 +44,16 @@ function add_modo($name,$email,$role,$token){
             </body>
         </html>
     ';
-
+    
     $header = "MIME-Version: 1.0\r\n";
     $header .= "Content-type: text/html; charset=UTF-8\r\n";
     $header .= 'From: no-reply@jmaes.fr.com' . "\r\n" . 'Reply-To: maesjasonpro@gmail.com' . "\r\n" . 'X-Mailer: PHP/' . phpversion();
-
     mail($email,$subject,$message,$header);
 
 }
 
 function get_modos(){
-    require('models/include/connect.php');
+    require('models/include/connectd.php');
     $req = $db->query("
         SELECT * FROM admins
     ");

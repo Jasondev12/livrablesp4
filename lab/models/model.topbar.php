@@ -1,15 +1,14 @@
 <?php
 
-
 function admin(){
     if(isset($_SESSION['admin'])){
-        require('models/include/connect.php');
+        require('models/include/connectd.php');
         $a = [
-            'name'     =>  $_SESSION['admin'],
+            'email'     =>  $_SESSION['admin'],
             'role'      =>  'admin'
         ];
 
-        $sql = "SELECT * FROM admins WHERE name=:name AND role=:role";
+        $sql = "SELECT * FROM admins WHERE email=:email AND role=:role";
         $req = $db->prepare($sql);
         $req->execute($a);
         $exist = $req->rowCount($sql);
@@ -19,7 +18,4 @@ function admin(){
         return 0;
     }
 }
-
-
-
 ?>

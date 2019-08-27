@@ -1,7 +1,7 @@
 <?php
 class ModelAPost{
 function post($title,$content,$posted){
-   require('models/include/connect.php');
+   require('models/include/connectd.php');
     $p = [
         'title'     =>  $title,
         'content'   =>  $content,
@@ -26,7 +26,7 @@ function post($title,$content,$posted){
 }
 
 function post_img($tmp_name, $extension, $id){
-   require('models/include/connect.php');
+   require('models/include/connectd.php');
     $i = [
         'id'    =>  $id,
         'image' =>  $id.$extension      //$id = 25 , $extension = .jpg      $id.$extension = "25".".jpg" = 25.jpg
@@ -35,7 +35,7 @@ function post_img($tmp_name, $extension, $id){
     $sql = "UPDATE posts SET image = :image WHERE id = :id";
     $req = $db->prepare($sql);
     $req->execute($i);
-    move_uploaded_file($tmp_name,"../img/posts/".$id.$extension);
-    header("Location:../index.php?action=post&id=".$id);
+    move_uploaded_file($tmp_name,"img/posts/".$id.$extension);
+    header("Location:index.php?client=post&id=".$id);
 }
 }

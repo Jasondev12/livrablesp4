@@ -2,7 +2,8 @@
 
 function get_post(){
 
-   require('models/include/connect.php');    $req = $db->query ("
+   require('models/include/connectd.php');    
+   $req = $db->query ("
     SELECT  posts.id,
             posts.title,
             posts.image,
@@ -21,9 +22,7 @@ function get_post(){
 }
 
 function edit($title,$content,$posted,$id){
-
-    
-   require('models/include/connect.php');    $e = [
+   require('models/include/connectd.php');    $e = [
         'title'     => $title,
         'content'   => $content,
         'posted'    => $posted,

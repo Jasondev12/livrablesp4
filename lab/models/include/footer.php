@@ -4,14 +4,9 @@
         <a class="grey-text text-lighten-4" id="textright-footer" href="#!">Mentions légales / Politique de confidentialité</a>
     </div>
 </footer>
-
-
-    <!--JavaScript at end of body for optimized loading-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="../assets/js/materialize.js"></script>
-    <script type="text/javascript" src="../assets/js/script.js"></script>
-
-
-
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../assets/js/materialize.js"></script>
+<script type="text/javascript" src="../assets/js/script.js"></script>
 
 </html>
