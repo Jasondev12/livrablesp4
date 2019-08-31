@@ -5,7 +5,7 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="assets/css/materialize.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="assets/css/materialize.css" media="screen" />
     <!--Import import.css-->
     <link href="assets/css/import.css" rel="stylesheet">
     <!--Import font Greatvibes-->

@@ -5,16 +5,15 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="assets/css/materialize.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="assets/css/materialize.css" media="screen" />
     <!--Import import.css-->
     <link href="assets/css/import.css" rel="stylesheet">
     <!--Import font Greatvibes-->
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
-    <title></title>
+    <title><?= $title ?></title>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
 </head>
 <body>
         <?= $content ?>

@@ -14,7 +14,7 @@ require('views/include/topbard.php');
             <div class="card-panel">
                 <div class="row">
                     <div class="col s6 offset-s3">
-                        <img src="..:/assets/img/modo.png" alt="image modérateur" width="100%">
+                        <img src="assets/img/modo.png" alt="image modérateur" width="100%">
                     </div>
                 </div>
                 <h4 class="center-align">Choisir un mot de passe</h4>
@@ -51,10 +51,10 @@ require('views/include/topbard.php');
                     <div class="row">
                         <div class="input-field col s12">
                             <input type="password" id="password" name="password" />
-                            <label for="password"></label>
+                            <label for="password">Choisissez un mot de passe</label>
                             <div class="input-field col s12">
                                 <input type="password" name="password_again" id="password_again" />
-                                <label for="password_again">Répéter le mot de passe</label>
+                                <label for="password_again">Répétez le mot de passe</label>
                             </div>
                         </div>
                         <center>

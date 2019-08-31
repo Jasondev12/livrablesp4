@@ -1,6 +1,6 @@
 <?php
-require('models/include/metad.php');
-require('models/include/topbard.php');
+require('views/include/metad.php');
+require('views/include/topbard.php');
 ?>
 <div class='container'>
     <div class="row">
