@@ -1,5 +1,6 @@
 <?php
 
+// VERIFICATION SI L'UTILISATEUR EST ADMIN
 function admin(){
     if(isset($_SESSION['id'])){
         require('models/include/connectd.php');

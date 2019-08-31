@@ -22,6 +22,15 @@ if(isset($_GET['client'])){
             case 'apropos' :
             apropos();
             break;
+            case 'ML' :
+            lmentions();
+            break;
+            case 'PDC':
+            podc();
+            break;
+            case 'signaler' :
+            signaler();
+            break;
             default:
             notFound();
             break;
@@ -66,9 +75,7 @@ if(isset($_GET['client'])){
             case 'password' :
             password();
             break;
-            case 'signaler' :
-            signaler();
-            break;
+
             default :
             signin();
             }

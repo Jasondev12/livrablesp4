@@ -93,3 +93,9 @@ function notFound(){
 function signaler(){
   require('models/model.signal.php');
 }
+function lmentions(){
+  require('views/lmention.php');
+}
+function podc(){
+  require('views/podc.php');
+}

@@ -1,5 +1,6 @@
 <?php
 class ModelEPost{
+    // RECUPERATION DE TOUS LES POSTS
 function get_post(){
 
     $db = $this->dbConnect();
@@ -12,6 +13,7 @@ function get_post(){
     return $result;
 }
     
+// CONNEXION A LA BDD
 public function dbConnect()
 {
     try

@@ -1,8 +1,15 @@
 <?php
-require('models/include/metad.php');
-require('models/include/topbard.php');
+$title = 'Modification | Jean Forteroche';
+?>
+<?php
+ob_start();
+?>
+<?php
+require('views/include/topbard.php');
+
     $post = get_post();
 ?>
+
 <div class='container'>
 </div>
 <div class="parallax-container">
@@ -51,8 +58,8 @@ require('models/include/topbard.php');
                 <label for="title">Titre de l'article</label>
             </div>
             <div class="input-field col s12">
+              <label for="content">Contenu de l'article</label>
                 <textarea id="content" name="content" class="materialize-textarea"><?= $post->content ?></textarea>
-                <label for="content">Contenu de l'article</label>
             </div>
             <div class="col s6">
                 <p>Public</p>
@@ -72,3 +79,7 @@ require('models/include/topbard.php');
         </div>
     </form>
 </div>
+<?php
+$content = ob_get_clean();
+require('views/include/metad.php')
+?>

@@ -1,6 +1,12 @@
 <?php
-require('models/include/metad.php');
-require('models/include/topbard.php');
+$title = 'Créer article | Jean Forteroche';
+?>
+<?php
+ob_start();
+?>
+<?php
+require('views/include/topbard.php');
+
 ?>
 <div class='container'>
     <h2>Poster un article</h2>
@@ -83,3 +89,7 @@ require('models/include/topbard.php');
             </div>
         </div>
     </form>
+    <?php
+$content = ob_get_clean();
+require('views/include/metad.php')
+?>

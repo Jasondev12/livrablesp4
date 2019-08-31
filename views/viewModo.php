@@ -1,6 +1,12 @@
+<<?php
+$title = 'Connexion | Jean Forteroche';
+?>
 <?php
-require('models/include/metad.php');
-require('models/include/topbard.php');
+ob_start();
+?>
+<?php
+require('views/include/topbard.php');
+
 ?>
 <div class='container'>
     <div class="row">
@@ -66,3 +72,7 @@ require('models/include/topbard.php');
         </div>
     </div>
 </div>
+<?php
+$content = ob_get_clean();
+require('views/include/metad.php')
+?>

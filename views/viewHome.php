@@ -1,6 +1,12 @@
 <?php
-require('models/include/metad.php');
-require('models/include/topbard.php');
+$title = 'Administation | Jean Forteroche';
+?>
+<?php
+ob_start();
+?>
+<?php
+require('views/include/topbard.php');
+
 ?>
 <div class='container'>
     <style>
@@ -125,3 +131,7 @@ require('models/include/topbard.php');
         <pre>
 </pre>
     </div>
+    <?php
+$content = ob_get_clean();
+require('views/include/metad.php')
+?>

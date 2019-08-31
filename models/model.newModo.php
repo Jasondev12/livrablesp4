@@ -1,5 +1,6 @@
 <?php
 
+// VERIFICATION SI MODO VIA EMAIL ET TOKEN
 function is_modo($email,$token){
     require('models/include/connectd.php');
     $a = [

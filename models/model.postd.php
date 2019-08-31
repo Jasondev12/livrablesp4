@@ -1,7 +1,7 @@
 <?php
 
+// RECUPERATION DE TOUS LES POSTS ET LE CREATEUR DU POST
 function get_post(){
-
    require('models/include/connectd.php');    
    $req = $db->query ("
     SELECT  posts.id,
@@ -21,6 +21,7 @@ function get_post(){
     return $result;
 }
 
+// PERMET D'EDITER LES POSTS
 function edit($title,$content,$posted,$id){
    require('models/include/connectd.php');    $e = [
         'title'     => $title,

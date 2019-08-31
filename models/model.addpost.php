@@ -1,5 +1,7 @@
 <?php
 class ModelAPost{
+
+  // INSERTION DES POSTS DANS LA BDD
 function post($title,$content,$posted){
    require('models/include/connectd.php');
     $p = [
@@ -25,6 +27,7 @@ function post($title,$content,$posted){
     return $post_info;
 }
 
+// INSERT LES IMAGES DANS LE SERVEUR WEB ET LE LIEN DANS LA BDD
 function post_img($tmp_name, $extension, $id){
    require('models/include/connectd.php');
     $i = [

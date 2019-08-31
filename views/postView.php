@@ -1,5 +1,13 @@
-<?php require('models/include/meta.php'); ?>
-<?php require('models/include/topbar.php') ?>
+<?php
+$title = 'Articles | Jean Forteroche';
+?>
+<?php
+ob_start();
+?>
+<?php
+require('views/include/topbar.php');
+
+?>
 </div>
 <div class="parallax-container">
     <div class="parallax">
@@ -9,35 +17,36 @@
 <div class="container">
     <h2><?=  $post['title'] ?></h2>
     <h6>Par <?=  $post['writer'] ?> le <?= date("d/m/Y à H:i", strtotime($post['date'])) ?></h6>
-    <p><?= nl2br( $post['content']); ?></p>
+
+    <p><?= html_entity_decode($post['content']) ?></p>
     <h4>Commentaires:</h4>
     <?php
-                  while($comment = $comments->fetch()){
-                        ?>
+        while($comment = $comments->fetch()){
+    ?>
     <blockquote>
         <strong><?= $comment['name'] ?> (<?= date("d/m/Y", strtotime($comment['date'])) ?>)</strong>
         <p><?= nl2br($comment['comment']); ?></p>
-        <a href="?admin=signaler&post=<?= $_GET['id'] ?>&s_cmt=<?= $comment['id'] ?>"> <button class="btn light red">Signaler</button> </a>
+        <a href="?client=signaler&post=<?= $_GET['id'] ?>&s_cmt=<?= $comment['id'] ?>"> <button class="btn light red">Signaler</button> </a>
     </blockquote>
     <?php
-                    }
-            ?>
+        }
+    ?>
     <h4>Commenter:</h4>
     <?php
-                if(isset($_POST['submit'])){
-                    $name = htmlspecialchars(trim($_POST['name']));
-                    $email = htmlspecialchars(trim($_POST['email']));
-                    $comment = htmlspecialchars(trim($_POST['comment']));
-                    $errors = [];
-                    if(empty($name) || empty($email) || empty($comment)){
-                        $errors['empty'] = "Tous les champs n'ont pas été remplis";
-                    }else{
-                        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-                            $errors['email'] = "L'adresse email n'est pas valide";
-                        }
+            if(isset($_POST['submit'])){
+                $name = htmlspecialchars(trim($_POST['name']));
+                $email = htmlspecialchars(trim($_POST['email']));
+                $comment = htmlspecialchars(trim($_POST['comment']));
+                $errors = [];
+              if(empty($name) || empty($email) || empty($comment)){
+                $errors['empty'] = "Tous les champs n'ont pas été remplis";
+              }else{
+                  if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                $errors['email'] = "L'adresse email n'est pas valide";
                     }
-                    if(!empty($errors)){
-                        ?>
+                  }
+                if(!empty($errors)){
+                    ?>
     <div class="card red">
         <div class="card-content white-text">
             <?php
@@ -48,9 +57,9 @@
         </div>
     </div>
     <?php
-                    }else{
-                        $model->comment($name,$email,$comment);
-                        ?>
+      }else{
+            $model->comment($name,$email,$comment);
+    ?>
     <script>
         window.location.replace("?client=post&id=<?= $_GET['id'] ?>");
 
@@ -87,4 +96,10 @@
         <a href="index.php?page=home" class="btn-floating light-blue  pulse"><i class="material-icons">home</i></a>
     </div>
 </div>
-<?php require('models/include/footer.php') ?>
+<?php
+require('views/include/footer.php');
+?>
+<?php
+$content = ob_get_clean();
+require('views/include/meta.php')
+?>

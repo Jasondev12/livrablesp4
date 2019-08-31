@@ -1,5 +1,6 @@
 <?php
 
+// VERIFICATION SI 1 UTILISATEUR EST ADMIN VIA SON EMAIL ET PASS
  function is_admin($email,$password)
 {
     require('models/include/connectd.php');  

@@ -1,4 +1,5 @@
 <?php
+// SIGNALEMENT D'1 COMMENTAIRE
  require('models/include/connectd.php');
 if(isset($_GET['s_cmt'])){
     $u_cmt = $db->prepare('UPDATE comments SET seen = :vue WHERE id = :id_cmt');
@@ -7,6 +8,7 @@ if(isset($_GET['s_cmt'])){
         'id_cmt' => $_GET['s_cmt'],
     ]);
     header('Location: ?client=post&id='.$_GET['post'].'');
-  
+
   }
+  
 ?>

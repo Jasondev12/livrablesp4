@@ -1,11 +1,18 @@
 <?php
-require('models/include/meta.php');
-require('models/include/topbar.php');
+$title = 'A Propos | Jean Forteroche';
+?>
+<?php
+ob_start();
+?>
+<?php
+require('views/include/topbar.php');
+
 ?>
 
-<body>
+<?php ?>
     <!-- Page content -->
     <main>
+    
         <div class="biocontent">
             <div class="container">
                 <img class="rounded-circle" id="imgrounded" src="assets/img/jf.jpg" alt="Photo Jean Forteroche">
@@ -35,7 +42,11 @@ require('models/include/topbar.php');
         </div>
     </main>
     <!-- /.container -->
-</body>
+
 <?php
-require('models/include/footer.php');
+require('views/include/footer.php');
+?>
+<?php
+$content = ob_get_clean();
+require('views/include/meta.php')
 ?>

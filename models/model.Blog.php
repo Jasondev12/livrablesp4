@@ -1,5 +1,7 @@
 <?php
 class ModelBlog{
+
+    // AFFICHAGE DES POSTS
 public function getAllPosts()
 {
     $db = $this->dbConnect();
@@ -7,11 +9,12 @@ public function getAllPosts()
     return $req;
 }
     
+// CONNEXION A LA BDD
 public function dbConnect()
 {
     try
     {
-        require('models/include/connect.php');
+        require('models/include/connectd.php');
         return $db;
     }
     catch(Exception $e)

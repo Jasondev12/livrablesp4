@@ -1,7 +1,13 @@
 <?php
-require_once('models/include/meta.php');
-require_once('models/include/topbar.php');
- ?>
+$title = 'Accueil | Jean Forteroche';
+?>
+<?php
+ob_start();
+?>
+<?php
+require('views/include/topbar.php');
+
+?>
 <div class="container">
     <h1>Page d'accueil</h1>
     <div class="row" id="row-home">
@@ -24,14 +30,19 @@ while ($data = $posts->fetch())
                 </div>
                 <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4"><?= $data['title'] ?> <i class="material-icons right">close</i></span>
-                    <p><?= substr(nl2br($data['content']),0,1000); ?>...</p>
+                    <p><?= substr(nl2br(html_entity_decode($data['content'])),0,1000); ?>...</p>
                 </div>
             </div>
         </div>
-
         <?php
 }
 ?>
     </div>
 </div>
-<?php require_once('models/include/footer.php'); ?>
+<?php
+require('views/include/footer.php');
+?>
+<?php
+$content = ob_get_clean();
+require('views/include/meta.php')
+?>

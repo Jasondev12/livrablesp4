@@ -1,4 +1,6 @@
 <?php
+
+// SUPPRIME POST OU COMMENTAIRE ET VALIDE LES COMMENTAIRES
  require('models/include/connectd.php');
 if(isset($_GET['del_cmt'])){
     $del_post = $db->prepare('DELETE FROM comments WHERE id = :id_com');
@@ -19,23 +21,7 @@ if(isset($_GET['del_cmt'])){
       'id_cmt' => $_GET['v_cmt'],
   ]);
   header('Location: ?admin=dashboard');
-}elseif(isset($_GET['s_cmt'])){
-    $u_cmt = $db->prepare('UPDATE comments SET seen = :vue WHERE id = :id_cmt');
-    $u_cmt->execute([
-        'vue' => 2,
-        'id_cmt' => $_GET['s_cmt'],
-    ]);
-    header('Location: ?client=post&id=');
-  
-  }else{
+}else{
     header('Location: ?admin=dashboard');
 }
-
-
-
-
-
-
-
-
 ?>

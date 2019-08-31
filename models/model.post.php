@@ -2,6 +2,7 @@
 
 class ModelPost{
    
+    // RECUPERE UN POST
     public function getPost($postId)
 {
     $db = $this->dbConnect();
@@ -10,7 +11,7 @@ class ModelPost{
     $post = $req->fetch();
     return $post;
 }
-    
+    // INSERTION D'1 COMMENTAIRE DANS LA BDD
 function comment($name, $email,$comment){
     $db = $this->dbConnect();  
     $c = array(
@@ -25,6 +26,7 @@ function comment($name, $email,$comment){
     $req->execute($c);
 }
     
+    // RECUPERATION DES COMMENTAIRES DU POST
 public function getComments($postId)
 {
     $db = $this->dbConnect();
@@ -37,7 +39,7 @@ public function dbConnect()
 {
     try
     {
-        require('models/include/connect.php');
+        require('models/include/connectd.php');
         return $db;
     }
     catch(Exception $e)

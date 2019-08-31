@@ -44,7 +44,7 @@
    }
 
    .materialboxed.responsive-img {
-       min-height: 182px;
+       min-height: 250px;
    }
 
    #text-footer {
@@ -116,12 +116,22 @@
        margin-bottom: 20px;
    }
 
-
+   .tox.tox-tinymce {
+       margin-top: 50px;
+   }
 
    /* MEDIA QUERIES */
 
-   @media (max-width: 380px) {
+    @media (max-width: 380px) {
 
        a.brand-logo {
            font-size: x-large;
        }
+
+    @media (min-width: 310px) and (max-width: 770px) {
+       td {
+        max-width: 120px !important;
+        height: 90px;
+        overflow: hidden;
+        word-wrap: anywhere;
+    }

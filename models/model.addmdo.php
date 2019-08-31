@@ -1,5 +1,7 @@
 <?php
 // MODELE DEFINIT LES FONCTIONS APPELES DANS NOS VIEWS
+
+// VERIFIE SI L'EMAIL EST LIBRE
 function email_taken($email){
     require('models/include/connectd.php');
     $e = ['email'   =>  $email];
@@ -10,11 +12,13 @@ function email_taken($email){
     return $free;
 }
 
+// GENERATION DU TOKEN
 function token($length){
     $chars = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN0123456789";
     return substr(str_shuffle(str_repeat($chars,$length)),0,$length);
 }
 
+// AJOUT DU MODERATEUR + ENVOI MAIL DANS LA BDD
 function add_modo($name,$email,$role,$token){
     require('models/include/connectd.php');
 
@@ -52,6 +56,7 @@ function add_modo($name,$email,$role,$token){
 
 }
 
+// RECUPERE LES MODOS
 function get_modos(){
     require('models/include/connectd.php');
     $req = $db->query("

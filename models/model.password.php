@@ -1,5 +1,6 @@
 <?php
 
+// MAJ DU PASSWORD
 function update_password($password){
     require('models/include/connectd.php');    
     $p = [
