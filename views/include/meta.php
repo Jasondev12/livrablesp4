@@ -2,6 +2,9 @@
 <html>
 
 <head>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="keywords" content="jean forteroche,blog,blog jf,blog alaska,Billet simple pour l'Alaska">
+    <link rel="icon" type="image/png" href="img/jf.png">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
