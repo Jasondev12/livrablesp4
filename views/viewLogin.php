@@ -1,6 +1,12 @@
 <?php
-require('views/include/metad.php');
+$title = 'Connexion | Jean Forteroche';
+?>
+<?php
+ob_start();
+?>
+<?php
 require('views/include/topbard.php');
+
 ?>
 <div class='container'>
     <div class="row">
@@ -43,11 +49,11 @@ require('views/include/topbard.php');
                 <form method="post">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input type="email" id="email" name="email" />
+                            <input type="email" id="email" name="email" required />
                             <label for="email">Adresse email</label>
                         </div>
                         <div class="input-field col s12">
-                            <input type="password" id="password" name="password" />
+                            <input type="password" id="password" name="password" required/>
                             <label for="password">Mot de passe</label>
                         </div>
                     </div>
@@ -64,3 +70,7 @@ require('views/include/topbard.php');
         </div>
     </div>
 </div>
+<?php
+$content = ob_get_clean();
+require('views/include/meta.php')
+?>

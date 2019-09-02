@@ -50,11 +50,11 @@ require('views/include/topbard.php');
                 <form method="post">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input type="password" id="password" name="password" />
-                            <label for="password">Choisissez un mot de passe</label>
+                            <input type="password" id="password" name="password" required />
+                            <label for="password">Choisisser un mot de passe</label>
                             <div class="input-field col s12">
-                                <input type="password" name="password_again" id="password_again" />
-                                <label for="password_again">Répétez le mot de passe</label>
+                                <input type="password" name="password_again" id="password_again" required />
+                                <label for="password_again">Répéter le mot de passe</label>
                             </div>
                         </div>
                         <center>

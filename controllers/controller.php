@@ -21,7 +21,6 @@ function quit(){
 
 function options(){
   require('models/model.options.php');
-
 }
 
 function logout()
@@ -98,4 +97,7 @@ function lmentions(){
 }
 function podc(){
   require('views/podc.php');
+}
+function error($message){
+  require ('views/errorView.php');
 }

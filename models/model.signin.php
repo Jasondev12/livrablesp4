@@ -4,10 +4,10 @@
  function is_admin($email,$password)
 {
     require('models/include/connectd.php');  
-    
+    $password_hash = hash('sha256',$password);
     $a = [
         'email'     =>  $email,
-        'password'  =>  sha1($password)
+        'password'  =>  $password_hash
     ];
     $sql = "SELECT * FROM admins WHERE email = :email AND password = :password";
     $req = $db->prepare($sql);

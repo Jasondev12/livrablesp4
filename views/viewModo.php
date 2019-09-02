@@ -1,4 +1,4 @@
-<<?php
+<?php
 $title = 'Connexion | Jean Forteroche';
 ?>
 <?php
@@ -49,11 +49,11 @@ require('views/include/topbard.php');
                 <form method="post">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input type="email" id="email" name="email" />
+                            <input type="email" id="email" name="email" required />
                             <label for="email">Adresse email</label>
                         </div>
                         <div class="input-field col s12">
-                            <input type="text" id="token" name="token" />
+                            <input type="text" id="token" name="token" required />
                             <label for="token">Code unique</label>
                         </div>
                         <center>

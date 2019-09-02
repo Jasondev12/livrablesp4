@@ -13,7 +13,7 @@ if(isset($_GET['client'])){
             post();
             }
             else {
-            echo 'Erreur : aucun identifiant de billet envoyé';
+            error('Erreur : aucun identifiant de billet envoyé');
             }
             break;
             case  'blog' :
