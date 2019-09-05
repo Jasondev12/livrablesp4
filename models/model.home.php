@@ -1,5 +1,5 @@
 <?php
-
+class ModelHome {
 // COMPTE LE NOMBRE D'ID DANS UNE TABLE
 function inTable($table){
    require('models/include/connectd.php');    
@@ -78,4 +78,5 @@ function dbConnect()
     {
         die('Erreur : '.$e->getMessage());
     }
+  }
 }

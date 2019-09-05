@@ -1,4 +1,5 @@
 <?php
+class ModelSigna{
 // SIGNALEMENT D'1 COMMENTAIRE
  require('models/include/connectd.php');
 if(isset($_GET['s_cmt'])){
@@ -10,5 +11,5 @@ if(isset($_GET['s_cmt'])){
     header('Location: ?client=post&id='.$_GET['post'].'');
 
   }
-  
+}
 ?>

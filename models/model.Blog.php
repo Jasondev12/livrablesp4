@@ -21,6 +21,6 @@ public function dbConnect()
     {
         die('Erreur : '.$e->getMessage());
     }
-}
+  }
 }
 ?>

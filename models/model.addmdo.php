@@ -1,4 +1,5 @@
 <?php
+class ModelAMdo {
 // MODELE DEFINIT LES FONCTIONS APPELES DANS NOS VIEWS
 
 // VERIFIE SI L'EMAIL EST LIBRE
@@ -68,4 +69,5 @@ function get_modos(){
         $results[] = $rows;
     }
     return $results;
+}
 }

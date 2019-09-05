@@ -25,7 +25,7 @@ require('views/include/topbard.php');
                     $errors = [];
                     if(empty($email) || empty($password)){
                         $errors['empty'] = "Tous les champs n'ont pas été remplis!";
-                    }else if(is_admin($email,$password) == 0){
+                    }else if($model->is_admin($email,$password) == 0){
                         $errors['exist']  = "Cet administrateur n'existe pas";
                     }
                     if(!empty($errors)){

@@ -1,5 +1,5 @@
 <?php
-
+class ModelPostd{
 // RECUPERATION DE TOUS LES POSTS ET LE CREATEUR DU POST
 function get_post(){
    require('models/include/connectd.php');    
@@ -33,6 +33,6 @@ function edit($title,$content,$posted,$id){
     $sql = "UPDATE posts SET title=:title, content=:content, date=NOW(), posted=:posted WHERE id=:id";
     $req = $db->prepare($sql);
     $req->execute($e);
-
+    }
 }
 ?>

@@ -1,5 +1,5 @@
 <?php
-
+class ModelNmodo{
 // VERIFICATION SI MODO VIA EMAIL ET TOKEN
 function is_modo($email,$token){
     require('models/include/connectd.php');
@@ -11,5 +11,6 @@ function is_modo($email,$token){
     $req= $db->prepare($sql);
     $req->execute($a);
     return $req->rowCount($sql);
+    }
 }
 ?>

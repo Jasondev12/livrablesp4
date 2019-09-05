@@ -1,5 +1,5 @@
 <?php
-
+class ModelTbar{
 // VERIFICATION SI L'UTILISATEUR EST ADMIN
 function admin(){
     if(isset($_SESSION['id'])){
@@ -18,5 +18,6 @@ function admin(){
     }else{
         return 0;
     }
+  }
 }
 ?>

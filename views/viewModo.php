@@ -25,7 +25,7 @@ require('views/include/topbard.php');
                     $errors = [];
                     if(empty($email) || empty($token)){
                         $errors['empty'] = "Tous les champs n'ont pas été remplis";
-                    }else if(is_modo($email,$token) == 0){
+                    }else if($model->is_modo($email,$token) == 0){
                         $errors['exist'] = "Ce modérateur n'existe pas";
                     }
                     if(!empty($errors)){

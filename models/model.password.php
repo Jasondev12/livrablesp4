@@ -1,5 +1,5 @@
 <?php
-
+class ModelPass{
 // MAJ DU PASSWORD
 function update_password($password){
     require('models/include/connectd.php');    
@@ -12,6 +12,6 @@ function update_password($password){
     $sql = "UPDATE admins SET password = :password WHERE email=:session";
     $req = $db->prepare($sql);
     $req->execute($p);
-
+    }
 }
 ?>

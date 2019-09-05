@@ -1,7 +1,5 @@
 <?php
-
 class ModelPost{
-   
     // RECUPERE UN POST
     public function getPost($postId)
 {
@@ -46,7 +44,7 @@ public function dbConnect()
     {
         die('Erreur : '.$e->getMessage());
     }
+  }
 }
-    }
 
 ?>

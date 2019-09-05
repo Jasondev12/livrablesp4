@@ -1,5 +1,5 @@
 <?php
-
+class ModelOptions{
 // SUPPRIME POST OU COMMENTAIRE ET VALIDE LES COMMENTAIRES
  require('models/include/connectd.php');
 if(isset($_GET['del_cmt'])){
@@ -28,5 +28,6 @@ if(isset($_GET['del_cmt'])){
   header('Location: ?admin=dashboard');
 }else{
     header('Location: ?admin=dashboard');
+    }
 }
 ?>

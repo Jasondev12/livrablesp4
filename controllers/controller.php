@@ -12,6 +12,7 @@ function password(){
 
 function newmodo(){
   require('models/model.newModo.php');
+  $model = new ModelAMdo();
   require('views/viewModo.php');
 }
 

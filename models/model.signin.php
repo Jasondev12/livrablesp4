@@ -1,5 +1,5 @@
 <?php
-
+class ModelSignin{
 // VERIFICATION SI 1 UTILISATEUR EST ADMIN VIA SON EMAIL ET PASS
  function is_admin($email,$password)
 {
@@ -18,5 +18,6 @@
         $_SESSION['id'] = $user_info['id'];
         $_SESSION['admin'] = $user_info['email'];
     }
+ }
 }
 ?>
